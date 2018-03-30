@@ -1,0 +1,9 @@
+utils/StringMatching.lo: utils/StringMatching.cpp \
+ /usr/include/stdc-predef.h ../../include/fastrtps/utils/StringMatching.h \
+ /usr/include/fnmatch.h
+
+/usr/include/stdc-predef.h:
+
+../../include/fastrtps/utils/StringMatching.h:
+
+/usr/include/fnmatch.h:

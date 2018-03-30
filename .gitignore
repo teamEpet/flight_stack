@@ -1,0 +1,6 @@
+Firmware/build/*
+Firmware-build
+flight_ws/build/*
+flight_ws/devel/*
+flight_ws/logs/*
+flight_ws/.catkin_tools/*

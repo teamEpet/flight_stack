@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['sample_5fidentity',['sample_identity',['../classeprosima_1_1fastrtps_1_1_sample_info__t.html#a93b7d2a98dd610c5eb9da84714c22f55',1,'eprosima::fastrtps::SampleInfo_t']]],
+  ['samplekind',['sampleKind',['../classeprosima_1_1fastrtps_1_1_sample_info__t.html#a680f0dd278b60222da848b7838a0fb96',1,'eprosima::fastrtps::SampleInfo_t']]],
+  ['seconds',['seconds',['../structeprosima_1_1fastrtps_1_1rtps_1_1_time__t.html#a18d95c0cea31bdbbbd2a5cf2aac101e8',1,'eprosima::fastrtps::rtps::Time_t::seconds()'],['../namespaceeprosima_1_1fastrtps_1_1xmlparser.html#a746d860e508beee3605872e29e2352ed',1,'eprosima::fastrtps::xmlparser::SECONDS()']]],
+  ['send_5fsock_5fbuf_5fsize',['SEND_SOCK_BUF_SIZE',['../namespaceeprosima_1_1fastrtps_1_1xmlparser.html#abf20f4988fc3b727925d3df4e64545ae',1,'eprosima::fastrtps::xmlparser']]],
+  ['sendbuffersize',['sendBufferSize',['../structeprosima_1_1fastrtps_1_1rtps_1_1test___u_d_pv4_transport_descriptor.html#a727b749b20b2dfb5288ffbe7195630f5',1,'eprosima::fastrtps::rtps::test_UDPv4TransportDescriptor::sendBufferSize()'],['../structeprosima_1_1fastrtps_1_1rtps_1_1_u_d_pv4_transport_descriptor.html#a727b749b20b2dfb5288ffbe7195630f5',1,'eprosima::fastrtps::rtps::UDPv4TransportDescriptor::sendBufferSize()'],['../structeprosima_1_1fastrtps_1_1rtps_1_1_u_d_pv6_transport_descriptor.html#a727b749b20b2dfb5288ffbe7195630f5',1,'eprosima::fastrtps::rtps::UDPv6TransportDescriptor::sendBufferSize()']]],
+  ['sendsocketbuffersize',['sendSocketBufferSize',['../classeprosima_1_1fastrtps_1_1rtps_1_1_r_t_p_s_participant_attributes.html#a25a47fead670b52f6d30e9f4f83de6d0',1,'eprosima::fastrtps::rtps::RTPSParticipantAttributes']]],
+  ['sequencenumber',['sequenceNumber',['../structeprosima_1_1fastrtps_1_1rtps_1_1_cache_change__t.html#ab52e6197c7b8605d1d944c66ffdc53e7',1,'eprosima::fastrtps::rtps::CacheChange_t']]],
+  ['sequencenumberdatamessagestodrop',['sequenceNumberDataMessagesToDrop',['../structeprosima_1_1fastrtps_1_1rtps_1_1test___u_d_pv4_transport_descriptor.html#abeeafc5a1a6dc60f3c48649faa3e6ffc',1,'eprosima::fastrtps::rtps::test_UDPv4TransportDescriptor']]],
+  ['serializedpayload',['serializedPayload',['../structeprosima_1_1fastrtps_1_1rtps_1_1_cache_change__t.html#a9f589e9217e0978e5fa14a114024722f',1,'eprosima::fastrtps::rtps::CacheChange_t']]],
+  ['service_5fcleanup_5fdelay',['service_cleanup_delay',['../classeprosima_1_1fastrtps_1_1_durability_service_qos_policy.html#a74b72421164af8590881cc1afb4f58cb',1,'eprosima::fastrtps::DurabilityServiceQosPolicy']]],
+  ['set',['set',['../classeprosima_1_1fastrtps_1_1rtps_1_1_fragment_number_set__t.html#acfb36b78267e53df78b538c4edf348b9',1,'eprosima::fastrtps::rtps::FragmentNumberSet_t']]],
+  ['shared',['SHARED',['../namespaceeprosima_1_1fastrtps_1_1xmlparser.html#a8d3469ef5356616b195b90f2b57bee1d',1,'eprosima::fastrtps::xmlparser']]],
+  ['simple',['SIMPLE',['../namespaceeprosima_1_1fastrtps_1_1xmlparser.html#aea0e4ca1d8dd1bd0eade4c7ee763932a',1,'eprosima::fastrtps::xmlparser']]],
+  ['simple_5fedp',['SIMPLE_EDP',['../namespaceeprosima_1_1fastrtps_1_1xmlparser.html#a6012380cd4d1e0a93e69c49469cc7314',1,'eprosima::fastrtps::xmlparser']]],
+  ['simple_5frtps_5fpdp',['SIMPLE_RTPS_PDP',['../namespaceeprosima_1_1fastrtps_1_1xmlparser.html#a40ffaffc3f593acb275f669d019e4ea1',1,'eprosima::fastrtps::xmlparser']]],
+  ['size',['size',['../structeprosima_1_1fastrtps_1_1rtps_1_1_guid_prefix__t.html#a2a0e596c595956aa92c56c99fe676bfc',1,'eprosima::fastrtps::rtps::GuidPrefix_t::size()'],['../structeprosima_1_1fastrtps_1_1rtps_1_1_entity_id__t.html#a2a0e596c595956aa92c56c99fe676bfc',1,'eprosima::fastrtps::rtps::EntityId_t::size()']]],
+  ['sourcetimestamp',['sourceTimestamp',['../structeprosima_1_1fastrtps_1_1rtps_1_1_cache_change__t.html#a3601410919ab6e7928014b2d3b5500aa',1,'eprosima::fastrtps::rtps::CacheChange_t::sourceTimestamp()'],['../classeprosima_1_1fastrtps_1_1_sample_info__t.html#a3601410919ab6e7928014b2d3b5500aa',1,'eprosima::fastrtps::SampleInfo_t::sourceTimestamp()']]],
+  ['srv_5fclean_5fdelay',['SRV_CLEAN_DELAY',['../namespaceeprosima_1_1fastrtps_1_1xmlparser.html#ad557ad301ecce84ec71ed0c5611bb0e8',1,'eprosima::fastrtps::xmlparser']]],
+  ['static',['STATIC',['../namespaceeprosima_1_1fastrtps_1_1xmlparser.html#ab1ff1db8ee3374056dbaf5a47bbc7ddb',1,'eprosima::fastrtps::xmlparser']]],
+  ['static_5fendpoint_5fxml',['STATIC_ENDPOINT_XML',['../namespaceeprosima_1_1fastrtps_1_1xmlparser.html#a3e868f2db3faba8e6207378e6085781a',1,'eprosima::fastrtps::xmlparser']]],
+  ['staticdiscovery',['STATICDISCOVERY',['../namespaceeprosima_1_1fastrtps_1_1xmlparser.html#a63e51f1c04c616dee41ebf24ad05c4ec',1,'eprosima::fastrtps::xmlparser']]],
+  ['status',['status',['../classeprosima_1_1fastrtps_1_1rtps_1_1_matching_info.html#a5ceaa56383823f787009e8eba0ae6fe8',1,'eprosima::fastrtps::rtps::MatchingInfo']]],
+  ['strength',['STRENGTH',['../namespaceeprosima_1_1fastrtps_1_1xmlparser.html#a65f49143763f1121c954743401f2f056',1,'eprosima::fastrtps::xmlparser']]],
+  ['subscriber',['SUBSCRIBER',['../namespaceeprosima_1_1fastrtps_1_1xmlparser.html#a831571543577b8c3ef4576926ee84587',1,'eprosima::fastrtps::xmlparser']]],
+  ['synchronous',['SYNCHRONOUS',['../namespaceeprosima_1_1fastrtps_1_1xmlparser.html#a6fb8ab568565af9bcc521d5f96a0bd16',1,'eprosima::fastrtps::xmlparser']]]
+];

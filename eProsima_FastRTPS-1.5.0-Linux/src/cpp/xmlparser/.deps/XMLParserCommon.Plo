@@ -1,0 +1,7 @@
+xmlparser/XMLParserCommon.lo: xmlparser/XMLParserCommon.cpp \
+ /usr/include/stdc-predef.h \
+ ../../include/fastrtps/xmlparser/XMLParserCommon.h
+
+/usr/include/stdc-predef.h:
+
+../../include/fastrtps/xmlparser/XMLParserCommon.h:
