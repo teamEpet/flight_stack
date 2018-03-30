@@ -16,7 +16,7 @@ void state_cb(const mavros_msgs::State::ConstPtr& msg){
 
 void update_pose(const nav_msgs::Odometry::ConstPtr& msg){
     vis_pose.pose = msg->pose.pose;
-    vis_pose.header.stamp = ros::Time::now(); 
+    vis_pose.header.stamp = ros::Time::now();
    vis_pose.header.frame_id = "map";
     // base_link << msg->pose.position.x << endl;
     ROS_INFO_STREAM("vis_pose_callback" << vis_pose);
@@ -64,7 +64,7 @@ int main(int argc, char **argv)
 
     ros::Time last_request = ros::Time::now();
     int i = 0;
-    while(ros::ok() && i < 100){
+    while(ros::ok() ){
         if( current_state.mode != "OFFBOARD" &&
             (ros::Time::now() - last_request > ros::Duration(5.0))){
             if( set_mode_client.call(offb_set_mode) &&
@@ -83,22 +83,23 @@ int main(int argc, char **argv)
                 last_request = ros::Time::now();
             }
         }
-        
+
         vis_pos_pub.publish(vis_pose);
 
         if( current_state.mode == "OFFBOARD" && current_state.armed){
             set_pose.pose.position.x = 0;
             set_pose.pose.position.y = 5;
             set_pose.pose.position.z = 2;
-            // ROS_INFO_STREAM(set_pose); 
+            // ROS_INFO_STREAM(set_pose);
+            ROS_INFO_STREAM(std::endl<< "set_pose_actual" << std::endl << set_pose);
             local_pos_pub.publish(set_pose);
             i++;
-        } else {            
+        } else {
             set_pose.pose.position.x = 0;
             set_pose.pose.position.y = 0;
             set_pose.pose.position.z = 0;
-            ROS_INFO_STREAM(set_pose);  
-            local_pos_pub.publish(set_pose);   
+            ROS_INFO_STREAM(std::endl<<"set_pose_static" << std::endl<< set_pose);
+            local_pos_pub.publish(set_pose);
         }
         ros::spinOnce();
         rate.sleep();
