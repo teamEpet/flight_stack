@@ -1,9 +1,4 @@
 [submodule "Firmware"]
 	path = Firmware
 	url = git@github.com:saikrn112/Firmware.git
-[submodule "flight_ws/src/mavlink-gbp-release"]
-	path = flight_ws/src/mavlink-gbp-release
-	url = https://github.com/mavlink/mavlink-gbp-release.git
-[submodule "flight_ws/src/mavlink"]
-	path = flight_ws/src/mavlink
-	url = https://github.com/mavlink/mavlink-gbp-release.git
+
