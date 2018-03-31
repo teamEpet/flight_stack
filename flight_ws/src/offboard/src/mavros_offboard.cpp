@@ -38,7 +38,7 @@ int main(int argc, char **argv)
     ros::ServiceClient set_mode_client = nh.serviceClient<mavros_msgs::SetMode>
             ("mavros/set_mode");
     ros::Publisher vis_pos_pub = nh.advertise<geometry_msgs::PoseStamped>
-            ("mavros/mocap/pose", 10);
+            ("mavros/vision_pose/pose", 10);
     ros::Subscriber gaz_pos = nh.subscribe<nav_msgs::Odometry>
         ("ground_truth/state", 10, update_pose);
 
