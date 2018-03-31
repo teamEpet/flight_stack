@@ -19,7 +19,7 @@ void update_pose(const nav_msgs::Odometry::ConstPtr& msg){
     vis_pose.header.stamp = ros::Time::now();
    vis_pose.header.frame_id = "map";
     // base_link << msg->pose.position.x << endl;
-    ROS_INFO_STREAM("vis_pose_callback" << vis_pose);
+    // ROS_INFO_STREAM("vis_pose_callback" << vis_pose);
     // ROS_INFO_STREAM(*msg);
 }
 
@@ -44,7 +44,7 @@ int main(int argc, char **argv)
 
 
     //the setpoint publishing rate MUST be faster than 2Hz
-    ros::Rate rate(2);
+    ros::Rate rate(20);
 
     // wait for FCU connection
     while(ros::ok() && !current_state.connected){
@@ -90,6 +90,7 @@ int main(int argc, char **argv)
             set_pose.pose.position.x = 0;
             set_pose.pose.position.y = 5;
             set_pose.pose.position.z = 2;
+            set_pose.pose.orientation.w = 1;
             // ROS_INFO_STREAM(set_pose);
             ROS_INFO_STREAM(std::endl<< "set_pose_actual" << std::endl << set_pose);
             local_pos_pub.publish(set_pose);
@@ -98,6 +99,7 @@ int main(int argc, char **argv)
             set_pose.pose.position.x = 0;
             set_pose.pose.position.y = 0;
             set_pose.pose.position.z = 0;
+            set_pose.pose.orientation.w = 1;
             ROS_INFO_STREAM(std::endl<<"set_pose_static" << std::endl<< set_pose);
             local_pos_pub.publish(set_pose);
         }
