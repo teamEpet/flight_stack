@@ -5,3 +5,6 @@
 [submodule "flight_ws/src/rotors_simulator"]
 	path = flight_ws/src/rotors_simulator
 	url = git@github.com:saikrn112/rotors_simulator.git
+[submodule "flight_ws/src/mav_comm"]
+	path = flight_ws/src/mav_comm
+	url = git@github.com:saikrn112/mav_comm.git
