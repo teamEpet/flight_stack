@@ -2,3 +2,6 @@
 	path = Firmware
 	url = git@github.com:saikrn112/Firmware.git
 
+[submodule "flight_ws/src/rotors_simulator"]
+	path = flight_ws/src/rotors_simulator
+	url = git@github.com:saikrn112/rotors_simulator.git
