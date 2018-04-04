@@ -40,11 +40,11 @@ int main(int argc, char **argv)
     ros::Publisher vis_pos_pub = nh.advertise<geometry_msgs::PoseStamped>
             ("mavros/vision_pose/pose", 10);
     ros::Subscriber gaz_pos = nh.subscribe<nav_msgs::Odometry>
-        ("ground_truth/state", 10, update_pose);
+        ("/zed/odom", 10, update_pose);
 
 
     //the setpoint publishing rate MUST be faster than 2Hz
-    ros::Rate rate(20);
+    ros::Rate rate(5);
 
     // wait for FCU connection
     while(ros::ok() && !current_state.connected){
