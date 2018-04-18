@@ -25,7 +25,7 @@ void update_pose(const nav_msgs::Odometry::ConstPtr& msg){
 
 int main(int argc, char **argv)
 {
-    ros::init(argc, argv, "offb_node");
+    ros::init(argc, argv, "waypoints");
 
     ros::NodeHandle nh;
 
@@ -40,11 +40,11 @@ int main(int argc, char **argv)
     ros::Publisher vis_pos_pub = nh.advertise<geometry_msgs::PoseStamped>
             ("mavros/vision_pose/pose", 10);
     ros::Subscriber gaz_pos = nh.subscribe<nav_msgs::Odometry>
-        ("/zed/odom", 10, update_pose);
+        ("/ground_truth/state", 10, update_pose);
 
 
     //the setpoint publishing rate MUST be faster than 2Hz
-    ros::Rate rate(5);
+    ros::Rate rate(15);
 
     // wait for FCU connection
     while(ros::ok() && !current_state.connected){
@@ -63,6 +63,11 @@ int main(int argc, char **argv)
     arm_cmd.request.value = true;
 
     ros::Time last_request = ros::Time::now();
+    ros::Time prev_waypoint = ros::Time::now();
+    set_pose.pose.position.x = 0;
+    set_pose.pose.position.y = 0;
+    set_pose.pose.position.z = 2;
+    set_pose.pose.orientation.w = 1;
     int i = 0;
     while(ros::ok() ){
         if( current_state.mode != "OFFBOARD" &&
@@ -86,19 +91,20 @@ int main(int argc, char **argv)
 
         vis_pos_pub.publish(vis_pose);
 
-        if( current_state.mode == "OFFBOARD" && current_state.armed){
-            set_pose.pose.position.x = 0;
-            set_pose.pose.position.y = 5;
+        if( current_state.mode == "OFFBOARD" && current_state.armed && ros::Time::now() - prev_waypoint > ros::Duration(1.0)){
+            set_pose.pose.position.x = i;
+            set_pose.pose.position.y = i;
             set_pose.pose.position.z = 2;
             set_pose.pose.orientation.w = 1;
+            prev_waypoint = ros::Time::now();
             // ROS_INFO_STREAM(set_pose);
             ROS_INFO_STREAM(std::endl<< "set_pose_actual" << std::endl << set_pose);
             local_pos_pub.publish(set_pose);
             i++;
         } else {
-            set_pose.pose.position.x = 0;
-            set_pose.pose.position.y = 0;
-            set_pose.pose.position.z = 0;
+            // set_pose.pose.position.x = 0;
+            // set_pose.pose.position.y = 0;
+            set_pose.pose.position.z = 2;
             set_pose.pose.orientation.w = 1;
             ROS_INFO_STREAM(std::endl<<"set_pose_static" << std::endl<< set_pose);
             local_pos_pub.publish(set_pose);
