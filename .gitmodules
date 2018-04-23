@@ -1,3 +1,6 @@
 [submodule "Firmware"]
 	path = Firmware
 	url = https://github.com/saikrn112/Firmware.git
+[submodule "flight_ws"]
+	path = flight_ws
+	url = git@github.com:saikrn112/flight_ws.git
