@@ -13,7 +13,9 @@ while [ "$1" != "" ]; do
 done
 
 if [ "$flight_ws" = true ] ; then
-	echo "CWD flight_ws"
+    echo ""
+    echo ""
+	echo "----------------------------CWD flight_ws----------------------------------------"
 	cd flight_ws
     git add . 
     git commit -m $CMD
@@ -23,7 +25,9 @@ if [ "$flight_ws" = true ] ; then
 fi 
 
 if [ "$rotors_simulator" = true ] ; then
-	echo "CWD rotors_simulator"
+    echo ""
+    echo ""
+	echo "----------------------------CWD rotors_simulator---------------------------------"
 	cd flight_ws/src/rotors_simulator
     git add . 
     git commit -m $CMD
@@ -37,7 +41,9 @@ fi
 
 if [ "$Firmware" = true ] ; then
 	cd Firmware 
-	echo "CWD Firmware"
+    echo ""
+    echo ""
+	echo "----------------------------CWD Firmware-----------------------------------------"
     git add . 
     git commit -m $CMD
     cd ..
@@ -47,7 +53,9 @@ fi
 
 if [ "$sitl_gazebo" = true ] ; then
 	cd Firmware/Tools/sitl_gazebo
-	echo "CWD sitl_gazebo"
+    echo ""
+    echo ""
+	echo "----------------------------CWD sitl_gazebo--------------------------------------"
     git add . 
     git commit -m $CMD
     cd ..

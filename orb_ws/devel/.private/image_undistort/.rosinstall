@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /media/Extra/flight_stack/orb_ws/devel/.private/image_undistort/setup.sh

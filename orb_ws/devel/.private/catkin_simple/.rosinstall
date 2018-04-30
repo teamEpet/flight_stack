@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /media/Extra/flight_stack/orb_ws/devel/.private/catkin_simple/setup.sh

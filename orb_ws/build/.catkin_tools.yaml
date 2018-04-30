@@ -1,0 +1,6 @@
+devel_space: /media/Extra/flight_stack/orb_ws/devel
+install: false
+install_space: /media/Extra/flight_stack/orb_ws/install
+profile: default
+source_space: /media/Extra/flight_stack/orb_ws/src
+workspace: /media/Extra/flight_stack/orb_ws
