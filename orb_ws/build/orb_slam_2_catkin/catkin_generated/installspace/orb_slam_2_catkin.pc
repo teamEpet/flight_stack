@@ -1,8 +1,0 @@
-prefix=/media/Extra/flight_stack/orb_ws/install
-
-Name: orb_slam_2_catkin
-Description: Description of orb_slam_2_catkin
-Version: 0.0.0
-Cflags: -I/media/Extra/flight_stack/orb_ws/install/include
-Libs: -L/media/Extra/flight_stack/orb_ws/install/lib -lorb_slam_2_catkin
-Requires: pangolin_catkin

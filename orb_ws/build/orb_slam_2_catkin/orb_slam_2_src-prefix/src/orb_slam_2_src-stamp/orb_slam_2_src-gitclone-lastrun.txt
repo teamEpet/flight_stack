@@ -1,3 +1,0 @@
-repository='git@github.com:raulmur/ORB_SLAM2.git'
-module=''
-tag=''

@@ -1,8 +1,0 @@
-prefix=/media/Extra/flight_stack/orb_ws/install
-
-Name: image_undistort
-Description: Description of image_undistort
-Version: 0.0.0
-Cflags: -I/media/Extra/flight_stack/orb_ws/install/include
-Libs: -L/media/Extra/flight_stack/orb_ws/install/lib -limage_undistort_nodelet
-Requires: 

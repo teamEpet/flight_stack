@@ -1,8 +1,0 @@
-prefix=/media/Extra/flight_stack/orb_ws/devel/.private/pangolin_catkin
-
-Name: pangolin_catkin
-Description: Description of pangolin_catkin
-Version: 0.1.0
-Cflags: -I/media/Extra/flight_stack/orb_ws/devel/.private/pangolin_catkin/include
-Libs: -L/media/Extra/flight_stack/orb_ws/devel/.private/pangolin_catkin/lib -lpangolin_catkin
-Requires: 

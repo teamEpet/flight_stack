@@ -1,8 +1,0 @@
-Symlinking /media/Extra/flight_stack/orb_ws/devel/./_setup_util.py
-Symlinking /media/Extra/flight_stack/orb_ws/devel/./setup.bash
-Symlinking /media/Extra/flight_stack/orb_ws/devel/./setup.zsh
-Symlinking /media/Extra/flight_stack/orb_ws/devel/./env.sh
-Symlinking /media/Extra/flight_stack/orb_ws/devel/./setup.sh
-Symlinking /media/Extra/flight_stack/orb_ws/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake
-Symlinking /media/Extra/flight_stack/orb_ws/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake
-Symlinking /media/Extra/flight_stack/orb_ws/devel/lib/pkgconfig/catkin_tools_prebuild.pc

@@ -1,1 +1,0 @@
-/media/Extra/flight_stack/orb_ws/devel/.private/pangolin_catkin/share/pangolin_catkin/cmake/pangolin_catkinConfig.cmake

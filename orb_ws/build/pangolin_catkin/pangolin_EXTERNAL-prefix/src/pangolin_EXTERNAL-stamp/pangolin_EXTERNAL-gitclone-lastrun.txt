@@ -1,3 +1,0 @@
-repository='https://github.com/stevenlovegrove/Pangolin'
-module=''
-tag=''

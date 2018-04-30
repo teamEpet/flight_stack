@@ -1,1 +1,0 @@
-set(ORDERED_PATHS "/media/Extra/flight_stack/orb_ws/devel/.private/pangolin_catkin/lib")
