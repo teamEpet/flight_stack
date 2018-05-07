@@ -18,7 +18,7 @@ if [ "$flight_ws" = true ] ; then
 	echo "----------------------------CWD flight_ws----------------------------------------"
 	cd flight_ws
     git add . 
-    git commit -m $CMD
+    git commit -m "$CMD"
     cd ..
     git add flight_ws
     git commit -m "flight_ws: $CMD"
@@ -30,7 +30,7 @@ if [ "$rotors_simulator" = true ] ; then
 	echo "----------------------------CWD rotors_simulator---------------------------------"
 	cd flight_ws/src/rotors_simulator
     git add . 
-    git commit -m $CMD
+    git commit -m "$CMD"
     cd ..
     git add rotors_simulator
     git commit -m "rotors_simulator: $CMD"
@@ -45,7 +45,7 @@ if [ "$Firmware" = true ] ; then
     echo ""
 	echo "----------------------------CWD Firmware-----------------------------------------"
     git add . 
-    git commit -m $CMD
+    git commit -m "$CMD"
     cd ..
     git add Firmware
     git commit -m "Firmware: $CMD"
@@ -57,7 +57,7 @@ if [ "$sitl_gazebo" = true ] ; then
     echo ""
 	echo "----------------------------CWD sitl_gazebo--------------------------------------"
     git add . 
-    git commit -m $CMD
+    git commit -m "$CMD"
     cd ..
     git add sitl_gazebo
     git commit -m "sitl_gazebo: $CMD"
