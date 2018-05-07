@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="vocabularty_path" default="$(find ORB_SLAM2)/../../../Vocabulary/ORBvoc.txt" />
+    <arg name="camera_setting_path" default="$(find ORB_SLAM2)/../../../Examples/Stereo/EuRoC.yaml" />
+    <arg name="bUseViewer" default="true" />
+    <arg name="bEnablePublishROSTopic" default="true" />
+
+    <node name="ORB_SLAM2" pkg="ORB_SLAM2" type="Stereo" output="screen"
+    	args="$(arg vocabularty_path) $(arg camera_setting_path) false">
+	<remap from="/camera/left/image_raw" to="/zed/left/image_rect_color"/>
+  <remap from="/camera/right/image_raw" to="/zed/right/image_rect_color"/>
+  	</node>
+
+    <group ns="zed">
+        <include file="$(find zed_wrapper)/launch/zed_camera.launch">
+          <!-- <arg name="publish_tf" value="false"/> -->
+           <arg name="odometry_frame" value="map" />
+        </include>
+    </group>
+</launch>
