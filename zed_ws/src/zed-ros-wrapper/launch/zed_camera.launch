@@ -46,12 +46,12 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <!-- ZED parameters -->
         <param name="zed_id"                value="$(arg zed_id)" />
 
-        <param name="resolution"            value="2" />
+        <param name="resolution"            value="3" />
         <param name="quality"               value="1" />
         <param name="sensing_mode"          value="0" />
         <param name="frame_rate"            value="100" />
         <param name="odometry_db"           value="" />
-        <param name="openni_depth_mode"     value="1" />
+        <param name="openni_depth_mode"     value="0" />
         <param name="gpu_id"                value="$(arg gpu_id)" />
         <param name="confidence"            value="100" />
         <param name="depth_stabilization"   value="1" />
@@ -78,7 +78,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <param name="point_cloud_topic"     value="point_cloud/cloud_registered" />
 
         <param name="odometry_topic"        value="odom" />
-
     </node>
 
     <!-- ROS URDF description of the ZED -->
