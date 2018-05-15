@@ -115,7 +115,9 @@ namespace zed_wrapper {
         int zed_id;
         int depth_stabilization;
         std::string odometry_DB;
+        
         std::string svo_filepath;
+        bool isRecord;
 
         //Tracking variables
         sl::Pose pose;
@@ -134,7 +136,7 @@ namespace zed_wrapper {
         // Point cloud variables
         sl::Mat cloud;
         string point_cloud_frame_id = "";
-        ros::Time point_cloud_time;
+        ros::Time point_cloud_time, oldTime;
 
         /* \brief Convert an sl:Mat to a cv::Mat
          * \param mat : the sl::Mat to convert
@@ -292,7 +294,10 @@ namespace zed_wrapper {
          */
         void publishTrackedFrame(tf2::Transform base_transform, tf2_ros::TransformBroadcaster &trans_br, string odometry_transform_frame_id, ros::Time t) {
             geometry_msgs::TransformStamped transformStamped;
-            transformStamped.header.stamp = ros::Time::now();
+            transformStamped.header.stamp = ros::Time::now(); 
+            if (isRecord){
+                transformStamped.header.stamp = oldTime.fromNSec(ros::Time::now().toNSec() - zed->getCurrentTimestamp() + zed->getCameraTimestamp());       
+            }
             transformStamped.header.frame_id = odometry_frame_id;
             transformStamped.child_frame_id = odometry_transform_frame_id;
             // conversion from Tranform to message
@@ -466,6 +471,9 @@ namespace zed_wrapper {
         void device_poll() {
             ros::Rate loop_rate(rate);
             ros::Time old_t = ros::Time::now();
+            if(isRecord){
+                old_t = oldTime.fromNSec(ros::Time::now().toNSec() - zed->getCurrentTimestamp() + zed->getCameraTimestamp());
+            }
             bool old_image = false;
             bool tracking_activated = false;
 
@@ -532,7 +540,9 @@ namespace zed_wrapper {
                     }
                     computeDepth = (depth_SubNumber + cloud_SubNumber + odom_SubNumber) > 0; // Detect if one of the subscriber need to have the depth information
                     ros::Time t = ros::Time::now(); // Get current time
-
+                    if(isRecord) {
+                        t = oldTime.fromNSec(ros::Time::now().toNSec() - zed->getCurrentTimestamp() + zed->getCameraTimestamp());
+                    }
                     grabbing = true;
                     if (computeDepth) {
                         int actual_confidence = zed->getConfidenceThreshold();
@@ -573,6 +583,9 @@ namespace zed_wrapper {
                     }
 
                     old_t = ros::Time::now();
+                    if(isRecord) {
+                        old_t = oldTime.fromNSec(ros::Time::now().toNSec() - zed->getCurrentTimestamp() + zed->getCameraTimestamp());
+                    }
 
                     // Publish the left == rgb image if someone has subscribed to
                     if (left_SubNumber > 0 || rgb_SubNumber > 0) {
@@ -688,8 +701,10 @@ namespace zed_wrapper {
                     loop_rate.sleep();
                 } else {
                     // Publish odometry tf only if enabled
-                    if (publish_tf) {
+                    if (publish_tf && !isRecord) {
                         publishTrackedFrame(base_transform, transform_odom_broadcaster, base_frame_id, ros::Time::now()); //publish the tracked Frame before the sleep
+                    } else if (publish_tf && isRecord){
+                        publishTrackedFrame(base_transform, transform_odom_broadcaster, base_frame_id, oldTime.fromNSec(ros::Time::now().toNSec() - zed->getCurrentTimestamp() + zed->getCameraTimestamp())); //publish the tracked Frame before the sleep    
                     }
                     std::this_thread::sleep_for(std::chrono::milliseconds(10)); // No subscribers, we just wait
                 }
@@ -813,8 +828,10 @@ namespace zed_wrapper {
             base_transform.setIdentity();
 
             // Try to initialize the ZED
-            if (!svo_filepath.empty())
+            if (!svo_filepath.empty()){
                 param.svo_input_filename = svo_filepath.c_str();
+                isRecord = true;
+            }
             else {
                 param.camera_fps = rate;
                 param.camera_resolution = static_cast<sl::RESOLUTION> (resolution);
