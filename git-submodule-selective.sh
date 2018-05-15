@@ -1,16 +1,23 @@
 #!/bin/sh
+flight_ws=false
+rotors_simulator=false
+Firmware=false
+sitl_gazebo=false
+flight_stack=true
+
 while [ "$1" != "" ]; do
     case $1 in
-        -f  )  flight_ws=false;;
-        -r  )  rotors_simulator=false;;
-        -F  )  Firmware=false;;
-	    -s  )  sitl_gazebo=false;;
+        -f  )  flight_ws=true;;
+        -r  )  rotors_simulator=true;;
+        -F  )  Firmware=true;;
+	    -s  )  sitl_gazebo=true;;
 	    -S  )  flight_stack=false;;
 	    *   )  CMD=$*
         break;;
     esac
     shift
 done
+
 cd flight_ws
 if [ "$flight_ws" != false ] ; then
     echo ""
