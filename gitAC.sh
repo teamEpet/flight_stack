@@ -34,7 +34,7 @@ if [ "$rotors_simulator" = true ] ; then
     cd ..
     git add rotors_simulator
     git commit -m "rotors_simulator: $CMD"
-    cd ../../..
+    cd ../..
     git add . 
     git commit -m "flight_ws: $CMD"
 fi 
