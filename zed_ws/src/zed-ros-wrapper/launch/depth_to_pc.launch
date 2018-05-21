@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="nodelet" type="nodelet" name="standalone_nodelet"  args="manager"/>
+  <param name="use_sim_time" value="true"/>
+  <node pkg="nodelet" type="nodelet" name="depth" args="load depth_image_proc/point_cloud_xyz standalone_nodelet">
+    <remap from="/camera_info" to="/zed/depth/camera_info"/>
+    <remap from="/image_rect" to="/zed/depth/depth_registered"/>
+    <remap from="/points" to="/zed_points"/>
+  </node>
+  <!-- <include file="$(find zed_wrapper)/launch/zed.launch"/> -->
+</launch>
