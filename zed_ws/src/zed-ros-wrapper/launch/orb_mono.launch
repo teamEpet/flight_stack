@@ -10,5 +10,5 @@
 	<remap from="/camera/image_raw" to="/zed/left/image_rect_color"/>
   	</node>
 
-    <include file="$(find zed_wrapper)/launch/zed.launch" />
+    <!-- <include file="$(find zed_wrapper)/launch/zed.launch" /> -->
 </launch>

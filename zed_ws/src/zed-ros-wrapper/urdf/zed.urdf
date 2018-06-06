@@ -52,7 +52,14 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </visual>
     </link>
     <link name="zed_depth_camera" />
+    <link name="zed_hinge">
+    </link>
 
+    <joint name="zed_hinge_joint" type="fixed">
+        <parent link="zed_hinge"/>
+        <child link="zed_center"/>
+        <origin xyz="0 0 0" rpy="0 -0.52 0" />
+    </joint>
     <joint name="zed_left_camera_joint" type="fixed">
         <parent link="zed_center"/>
         <child link="zed_left_camera"/>

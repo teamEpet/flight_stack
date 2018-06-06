@@ -17,14 +17,20 @@ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 <launch>
-    <arg name="svo_file"              default="" /><!-- <arg name="svo_file" default="path/to/svo/file.svo"> -->
+    <!-- <arg name="svo_file"              default="/media/bhagyasyam/Seagate Expansion Drive/SVO_files/test1.svo" /> -->
+    <!-- <arg name="svo_file" default="path/to/svo/file.svo"/> -->
+    <arg name="svo_file" default=""/>
     <arg name="zed_id"                default="0" />
+    <arg name="resolution"            default="3" />    
+    <arg name="fps"                   default="100" />    
+
     <!-- GPU ID-->
     <arg name="gpu_id"                default="-1" />
     <!-- Definition coordinate frames -->
     <arg name="publish_tf"            default="true" />
     <arg name="odometry_frame"        default="odom" />
-    <arg name="base_frame"            default="zed_center" />
+    <!-- <arg name="base_frame"            default="zed_center" /> -->
+    <arg name="base_frame"            default="zed_hinge" />
     <arg name="camera_frame"          default="zed_left_camera" />
     <arg name="depth_frame"           default="zed_depth_camera" />
     <!-- Publish urdf zed -->
@@ -46,10 +52,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <!-- ZED parameters -->
         <param name="zed_id"                value="$(arg zed_id)" />
 
-        <param name="resolution"            value="2" />
+        <param name="resolution"            value="$(arg resolution)" />
         <param name="quality"               value="2" />
         <param name="sensing_mode"          value="1" />
-        <param name="frame_rate"            value="100" />
+        <param name="frame_rate"            value="$(arg fps)" />
         <param name="odometry_db"           value="" />
         <param name="openni_depth_mode"     value="0" />
         <param name="gpu_id"                value="$(arg gpu_id)" />
